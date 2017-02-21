@@ -19,7 +19,7 @@ renderer.render( escena, camara );
 //Generación y visualización de un objeto^
 var forma = new THREE.BoxGeometry( 1, 1, 1 );
 var cubo  = new THREE.Mesh( forma );
-cubo.rotation.x += 0.2;
+cubo.rotation.x += 0.8;
 cubo.rotation.y += 0.1;
 escena.add( cubo );
 renderer.render( escena, camara );
