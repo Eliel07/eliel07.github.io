@@ -4,7 +4,7 @@ var escena = new THREE.Scene();
 //Luego se dispone de una cámara, la cual define la perspectiva con que se visualizará la escena.
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 25;
+camara.position.z = 250;
 //El último objeto requerido es un renderizador, el cual genera una imagen, considerando la iluminación y la perspectiva.
 
 var renderer = new THREE.WebGLRenderer();
