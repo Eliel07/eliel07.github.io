@@ -6,7 +6,7 @@ figura.lineTo(50, 50);
 figura.lineTo(50, 5);
 figura.lineTo(5, 5);
 var forma = new THREE.ExtrudeGeometry( figura,
-                                       {amount: 100} );
+                                       {amount: 80} );
                                        
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
