@@ -1,5 +1,5 @@
 var puntos = [];
-for ( var i = 0; i < 50; i ++ ) {
+for ( var i = 0; i < 40; i ++ ) {
     puntos.push( new THREE.Vector2(
                      Math.tan( i * 0.2 ) * 2,
                      ( i - 5 ) * 2 ) );
@@ -16,7 +16,7 @@ var escena = new THREE.Scene();
 escena.add(malla);
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 1000;
+camara.position.z = 700;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
