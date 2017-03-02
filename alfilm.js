@@ -1,5 +1,5 @@
 var puntos = [];
-for ( var i = 0; i <=22; i ++ ) {
+for ( var i = 0; i <23; i ++ ) {
 if(i<=6){
     puntos.push( new THREE.Vector2(i,30-i);
 }
