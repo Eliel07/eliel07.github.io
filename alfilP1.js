@@ -1,7 +1,7 @@
 var puntos = [];
 for ( var i = 0; i < 30; i ++ ) {
     puntos.push( new THREE.Vector2(
-                     Math.tan( i * 0.5 ) * 2,
+                     Math.tan( i * 0.1 ) * 2,
                      ( i - 3) * 2 ) );
 }
 
