@@ -1,21 +1,21 @@
-//var base = new THREE.CircleGeometry( 1.5, 1.5 );
-//var tronco = new THREE.CylinderGeometry( 1, 2, 1);
-var pico = new THREE.ConeGeometry( 1,1,1);
-//var base1 = new THREE.CircleGeometry( 1.5, 1 );
-pico.translate(0,2,0);
-//base1.translate(0,1,0);
+var base = new THREE.CircleGeometry(5,32);
+var tronco = new THREE.CylinderGeometry(5,5,20,32);
+var pico = new THREE.ConeGeometry( 5,20,32);
+var base1 = new THREE.CircleGeometry(5,32);
+pico.translate(0,20,0);
+base1.translate(0,20,0);
 
-//var baseMalla = new THREE.Mesh(base);
-//var troncoMalla = new THREE.Mesh(tronco);
+var baseMalla = new THREE.Mesh(base);
+var troncoMalla = new THREE.Mesh(tronco);
 var picoMalla = new THREE.Mesh(pico);
-//var base1Malla = new THREE.Mesh(base1);
+var base1Malla = new THREE.Mesh(base1);
 
 var reinaForma= new THREE.Geometry();
 
-//reinaForma.merge(baseMalla.geometry, baseMalla.matrix);
-//reinaForma.merge(troncoMalla.geometry, troncoMalla.matrix);
+reinaForma.merge(baseMalla.geometry, baseMalla.matrix);
+reinaForma.merge(troncoMalla.geometry, troncoMalla.matrix);
 reinaForma.merge(picoMalla.geometry, picoMalla.matrix);
-//reinaForma.merge(base1Malla.geometry, base1Malla.matrix);
+reinaForma.merge(base1Malla.geometry, base1Malla.matrix);
 
 var material = new THREE.MeshNormalMaterial();
 var reinaMalla = new THREE.Mesh(reinaForma, material);
