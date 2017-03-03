@@ -12,10 +12,8 @@ if(i>7&&i<=11){
 if(i>12&&i<=15){
     puntos.push( new THREE.Vector2(2,30-i));
 }
-if(i>15&&i<=17){
-    puntos.push( new THREE.Vector2(i-13,30-i));
-}
-if(i>17){
+
+if(i>15){
     puntos.push( new THREE.Vector2(22-i,18));
 }
 }
@@ -31,7 +29,7 @@ var escena = new THREE.Scene();
 escena.add(malla);
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 200;
+camara.position.z = 130;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
