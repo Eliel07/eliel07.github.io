@@ -1,6 +1,6 @@
 var base = new THREE.CircleGeometry( 1.5, 1.5 );
 var tronco = new THREE.CylinderGeometry( 1, 1, 1);
-var pico = = new THREE.ConeGeometry( .3,.3,.5 );
+var pico = new THREE.ConeGeometry( .3,.3,.5 );
 var base1 = new THREE.CircleGeometry( 1.5, 1 );
 pico.translate(0,1,0);
 base1.translate(0,1,0);
