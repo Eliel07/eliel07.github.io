@@ -1,26 +1,25 @@
-var base = new THREE.CircleGeometry(5,32);
 var tronco = new THREE.CylinderGeometry(5,5,20,32);
 var pico = new THREE.ConeGeometry( 5,20,32);
-var base1 = new THREE.CircleGeometry(5,32);
+var esfera = new THREE.SphereGeometry(3);
 pico.translate(0,20,0);
-base1.translate(0,20,0);
+esfera.translate(0,20,0);
 
-var baseMalla = new THREE.Mesh(base);
+
 var troncoMalla = new THREE.Mesh(tronco);
 var picoMalla = new THREE.Mesh(pico);
-var base1Malla = new THREE.Mesh(base1);
+var esferaMalla = new THREE.Mesh(esfera);
 
-var reinaForma= new THREE.Geometry();
+var peonForma= new THREE.Geometry();
 
-reinaForma.merge(baseMalla.geometry, baseMalla.matrix);
-reinaForma.merge(troncoMalla.geometry, troncoMalla.matrix);
-reinaForma.merge(picoMalla.geometry, picoMalla.matrix);
-reinaForma.merge(base1Malla.geometry, base1Malla.matrix);
+peonForma.merge(baseMalla.geometry, esferaMalla.matrix);
+peonForma.merge(troncoMalla.geometry, troncoMalla.matrix);
+peonForma.merge(picoMalla.geometry, picoMalla.matrix);
+
 
 var material = new THREE.MeshNormalMaterial();
-var reinaMalla = new THREE.Mesh(reinaForma, material);
+var peonMalla = new THREE.Mesh(peonForma, material);
 var escena = new THREE.Scene();
-escena.add(reinaMalla);
+escena.add(peonMalla);
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 60;
