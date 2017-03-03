@@ -1,22 +1,22 @@
 var puntos = [];
 for ( var i = 0; i <=22; i ++ ) {
 if(i<=6){
-    puntos.push( new THREE.Vector2(i,30-i));
+    puntos.push( new THREE.Vector2(i,10-i));
 }
 if(i==7){
-    puntos.push( new THREE.Vector2(i-1,30-i));
+    puntos.push( new THREE.Vector2(i-1,10-i));
 }
 if(i>7&&i<=11){
-    puntos.push( new THREE.Vector2(14-i,30-i));
+    puntos.push( new THREE.Vector2(14-i,10-i));
 }
 if(i>12&&i<=15){
-    puntos.push( new THREE.Vector2(2,30-i));
+    puntos.push( new THREE.Vector2(2,10-i));
 }
 if(i>15&&i<=17){
-    puntos.push( new THREE.Vector2(i-13,30-i));
+    puntos.push( new THREE.Vector2(i-13,10-i));
 }
 if(i>17){
-    puntos.push( new THREE.Vector2(22-i,18));
+    puntos.push( new THREE.Vector2(22-i,-7));
 }
 }
 
