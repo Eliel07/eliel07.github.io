@@ -1,18 +1,18 @@
 var puntos = [];
-for ( var i = 0; i <23; i ++ ) {
-if(i<7){
+for ( var i = 0; i <=22; i ++ ) {
+if(i<=6){
     puntos.push( new THREE.Vector2(i,30-i));
 }
-if(i>6&&i<8){
+if(i==7){
     puntos.push( new THREE.Vector2(i-1,30-i));
 }
-if(i>7&&i<12){
+if(i>7&&i<=11){
     puntos.push( new THREE.Vector2(14-i,30-i));
 }
-if(i>12&&i<16){
+if(i>12&&i<=15){
     puntos.push( new THREE.Vector2(2,30-i));
 }
-if(i>15&&i<18){
+if(i>15&&i<=17){
     puntos.push( new THREE.Vector2(i-13,30-i));
 }
 if(i>17){
