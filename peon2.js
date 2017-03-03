@@ -1,8 +1,8 @@
-var tronco = new THREE.CylinderGeometry(5,5,20,5);
-var pico = new THREE.ConeGeometry( 5,20,20);
+var tronco = new THREE.CylinderGeometry(4,4,20,4);
+var pico = new THREE.ConeGeometry( 4,20,20);
 var esfera = new THREE.SphereGeometry(5);
 pico.translate(0,20,0);
-esfera.translate(0,15,0);
+esfera.translate(0,20,0);
 
 
 var troncoMalla = new THREE.Mesh(tronco);
