@@ -16,7 +16,7 @@ if(i>15&&i<=17){
     puntos.push( new THREE.Vector2(i-13,10-i));
 }
 if(i>17){
-    puntos.push( new THREE.Vector2(22-i,-7));
+    puntos.push( new THREE.Vector2(22-i,-8));
 }
 }
 
