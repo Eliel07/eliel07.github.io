@@ -10,7 +10,7 @@ if(i>7&&i<=11){
     puntos.push( new THREE.Vector2(14-i,30-i));
 }
 if(i>12&&i<=15){
-    puntos.push( new THREE.Vector2(2,30-i));
+    puntos.push( new THREE.Vector2(3,30-i));
 }
 
 if(i>15){
