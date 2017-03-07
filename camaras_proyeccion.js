@@ -8,7 +8,7 @@ camara.position.z=15;
 var cubo= new THREE.Mesh(    new THREE.BoxGeometry(2,2,2),
                          new THREE.MeshNormalMaterial() );
    
-cubo.ratateY(Math.PI/4));
+cubo.ratateY(Math.PI/4);
                          
 var esfera1= new THREE.Mesh(    new THREE.SphereGeometry(1),
                          new THREE.MeshNormalMaterial() );
