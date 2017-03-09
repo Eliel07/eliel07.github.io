@@ -7,17 +7,17 @@ var camara= new THREE.PerspectiveCamera(campoVision,relacionAspecto,planocercano
 camara.position.z=15;
 
 for(var i=0; i<3;i++){
-
-var cubo= new THREE.Mesh(    new THREE.BoxGeometry(2,2,2),
+a="cubo"+i;
+var a new THREE.Mesh(    new THREE.BoxGeometry(2,2,2),
                          new THREE.MeshNormalMaterial() );
    }
 
   
-cubo.position.x=-5;
+a.position.x=-5;
 
 
 var escena =  new THREE.Scene();
-escena.add(cubo);
+escena.add(a);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
