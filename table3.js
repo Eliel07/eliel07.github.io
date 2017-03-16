@@ -6,18 +6,16 @@ var planoLejano=1000;
 var camara= new THREE.PerspectiveCamera(campoVision,relacionAspecto,planocercano,planoLejano);
 camara.position.z=15;
 
-for(var i=0; i<3;i++){
-a="cubo"+i;
-var a new THREE.Mesh(    new THREE.BoxGeometry(2,2,2),
+var cubo new THREE.Mesh(    new THREE.BoxGeometry(2,2,2),
                          new THREE.MeshNormalMaterial() );
    }
 
   
-a.position.x=-5;
+cubo.position.x=-5;
 
 
 var escena =  new THREE.Scene();
-escena.add(a);
+escena.add(cubo);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
