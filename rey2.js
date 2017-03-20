@@ -19,6 +19,9 @@ if(i==8){
 if(i==9){
     puntos.push( new THREE.Vector2(4,0));
 }
+    if(i==10){
+    puntos.push( new THREE.Vector2(14-i,0));
+}
 
 }
 
