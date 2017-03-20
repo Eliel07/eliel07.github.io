@@ -17,13 +17,13 @@ var forma = new THREE.LatheGeometry(puntos1);
 var material = new THREE.MeshNormalMaterial();
 
 var malla = new THREE.Mesh( forma, material );
-malla.rotateX( Math.PI/7 );
+
 
 var escena = new THREE.Scene();
 escena.add(malla);
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 70;
+camara.position.z = 60;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
