@@ -7,7 +7,7 @@ if(i==7){
     puntos1.push( new THREE.Vector2(6,-2));
 }
 if(i==8){
-    puntos1.push( new THREE.Vector2(0,0));
+    puntos1.push( new THREE.Vector2(0,-2));
 }
 
 }
