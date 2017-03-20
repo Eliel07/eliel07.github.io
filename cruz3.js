@@ -16,7 +16,7 @@ reina.lineTo(-1, 16);
 
 
 var forma = new THREE.ExtrudeGeometry( reina,
-                                       {amount: 0.1} );
+                                       {amount: 0.0} );
                                        
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
