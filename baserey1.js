@@ -1,21 +1,16 @@
 var tronco = new THREE.CylinderGeometry(6,6,2,6);
 
-trnco.translate(0,-2,0);
+tronco.translate(0,-2,0);
 
 
 var troncoMalla = new THREE.Mesh(tronco);
-
-var peonForma= new THREE.Geometry();
-
-
-peonForma.merge(troncoMalla.geometry, troncoMalla.matrix);
-
+var tronco= new THREE.Geometry();
 
 
 var material = new THREE.MeshNormalMaterial();
-var peonMalla = new THREE.Mesh(peonForma, material);
+var tronco = new THREE.Mesh(tronco, material);
 var escena = new THREE.Scene();
-escena.add(peonMalla);
+escena.add(tronco);
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 60;
