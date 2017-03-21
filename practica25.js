@@ -1,14 +1,15 @@
 var camara = new THREE.OrthographicCamera();
 
-camara.left = window.innerWidth/-8;
-camara.right = window.innerWidth/1;
-camara.top = window.innerHeight/1;
-camara.bottom= window.innerHeight/-8;
+camara.left = window.innerWidth/-1;
+camara.right = window.innerWidth/-8;
+camara.top = window.innerHeight/-8;
+camara.bottom= window.innerHeight/-1;
 camara.near = 1;
-camara.far = 10;
+camara.far = 100;
 camara.updateProjectionMatrix();
 
 camara.position.z = 45;
+camara.position.x = 45;
 //Figura1
 
 //CRUZ
