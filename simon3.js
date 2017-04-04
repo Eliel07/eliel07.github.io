@@ -14,7 +14,7 @@ document.body.appendChild(renderer.domElement);
 
 function setup(){
 var forma= new THREE.BoxGeometry(1,1,1);
-var material=new THREE.MeshLamberMaterial({color: '#ffffff'});
+var material=new THREE.MeshLambertMaterial({color: '#ffffff'});
 malla = new THREE.Mesh(forma,material);
 var luzPuntual=new  THREE.PointLight(0XCC00CC);
 luzPuntual.position.x =10;
