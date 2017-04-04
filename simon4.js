@@ -34,7 +34,7 @@ requestAnimationFrame(loop);
 malla.rotation.x+=.01;
 malla.rotation.y+=.01;
 
-renderer.render(escena.camara);
+renderer.render(escena,camara);
 }
 
 var camara,escena, renderer, malla;
