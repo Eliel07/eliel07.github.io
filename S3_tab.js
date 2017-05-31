@@ -130,7 +130,7 @@ for (var k9=0;k9<2;k9++)
 {
 for (var l9=0;l9<15;l9++)
 {
-var cubo7= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10));
+var cubo8= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10));
   cubo8.position.x =150+l9*10;
   cubo8.position.z=-k9*10;
   cubo8.position.y=50;
