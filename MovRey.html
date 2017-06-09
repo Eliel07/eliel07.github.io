@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ejemplos de modelado</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/THREEx.WindowResize.js"></script>
+	<script type="text/javascript" src="js/THREEx.KeyboardState.js"></script>
+	
+	
+	 <style type="text/css">
+      body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+		overflow:hidden;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Modelos</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#">Inicio</a>
+            </li>
+			 <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modelos 3d <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" id="plano">Plano</a>
+                </li>
+				<li>
+                  <a href="#" id="figura">Figura</a>
+                </li>
+				
+                <li>
+                  <a href="#" id="cubo" >Cubo</a>
+                </li>
+                <li>
+                  <a href="#" id="cilindro" >Cilindro</a>
+                </li>
+                
+                <li>
+                  <a href="#" id="esfera" >Esfera</a>
+                </li>
+              </ul>
+            </li>
+          
+            <li>
+              <a href="http://develoteca.com">develoteca.com</a>
+            </li>
+            <li>
+              <a href="http://develoteca.com/contacto/">Contacto</a>
+            </li>
+           </ul>
+        </div>
+        <!--/.navbar-collapse -->
+      </div>
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div id="render" style="overflow:hidden"></div>  
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+    </div>
+    <!-- /container -->
+	<script src="js/three.min.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script>
+			/******************************* variables *******************/
+			//Preparamos el render
+			var Render=new THREE.WebGLRenderer({ antialias: true });
+			Render.shadowMapEnabled = true;
+			//El escenario
+			var Escenario=new THREE.Scene();
+			var teclado=new THREEx.KeyboardState();
+			// la Figura 
+			var Figura;
+		  var Ancho=window.innerWidth-15;
+			var Alto=window.innerHeight-10;
+			
+			var Angulo = 45;	
+			var Aspecto=Ancho/Alto;
+			var cerca=0.1;
+			var lejos=10000;
+
+			//La cÃ¡mara
+			var Camara=new THREE.PerspectiveCamera(Angulo,Aspecto,cerca,lejos);
+			THREEx.WindowResize(Render, Camara);
+			
+			/******************************* inicio *******************/
+			function inicio(){
+					//TamaÃ±o del render(resultado)
+					Render.setSize(Ancho,Alto);
+					//Se agrega el render al documento html
+					document.getElementById('render').appendChild(Render.domElement);
+					//Acercamos la cÃ¡mara en z es profundidad para ver el punto
+					Camara.position.z=100;
+					Camara.position.y=10;
+					//agregando la cÃ¡mara al escenario
+					Escenario.add(Camara);
+					// agregamos todo el escenario y la cÃ¡mara al render
+								}
+				
+			
+			
+			function animacion(){
+					
+					requestAnimationFrame(animacion);
+					render_modelo();
+					
+					tiempo=0.01;
+					distancia=100;
+					recorrido=distancia*tiempo;
+					
+					obj_mov=reyMalla2;
+					
+					if(teclado.pressed("up")){
+						obj_mov.position.Y+=recorrido;
+						
+					}
+					if(teclado.pressed("down")){
+						obj_mov.position.Y-=recorrido;
+					}
+					if(teclado.pressed("left")){
+						obj_mov.position.x+=recorrido;
+					}
+					if(teclado.pressed("right")){
+						obj_mov.position.x-=recorrido;
+					}
+					controls.target.set(obj_mov.position.x,obj_mov.position.y,obj_mov.position.z);
+						}
+            
+            
+			function render_modelo(){
+					controls.update();
+					Render.render(Escenario,Camara);
+			}
+      
+			/**************************llamado a las funciones ******************/
+		funtion cargar_reina(){
+//Figura2
+//CRUZ2
+var reina = new THREE.Shape();
+reina.moveTo(-1,16);reina.lineTo(1,16);reina.lineTo(1,18);reina.lineTo(3, 18);reina.lineTo(3, 20);reina.lineTo(1, 20);
+reina.lineTo(1, 22);reina.lineTo(-1, 22);reina.lineTo(-1,20);reina.lineTo(-3, 20);reina.lineTo(-3, 18);reina.lineTo(-1,18);
+reina.lineTo(-1, 16);
+var cruz2 = new THREE.ExtrudeGeometry( reina,{amount: 0.0} );
+
+//CUERPO2
+var puntos3 = [];
+for ( var i = 0; i <=9; i ++ ) {
+if(i<=4){     puntos3.push( new THREE.Vector2(i,16));} if(i==5){     puntos3.push( new THREE.Vector2(2,11));}
+if(i==6){     puntos3.push( new THREE.Vector2(4,9));} if(i==7){     puntos3.push( new THREE.Vector2(4,8));}
+if(i==8){    puntos3.push( new THREE.Vector2(2,8));}   if(i==9){     puntos3.push( new THREE.Vector2(4,0));}
+    if(i==10){    puntos3.push( new THREE.Vector2(0,0));}}
+var cuerpo2 = new THREE.LatheGeometry(puntos3);
+
+//BASE2
+var puntos4 = [];
+for ( var i = 0; i <=22; i ++ ) { if(i<=6){     puntos4.push( new THREE.Vector2(i,0));}
+if(i==7){     puntos4.push( new THREE.Vector2(6,-2));} if(i==8){    puntos4.push( new THREE.Vector2(0,-2));}}
+
+var base2 = new THREE.LatheGeometry(puntos4);
+
+//UNION
+var cruzMalla2 = new THREE.Mesh(cruz2); var cuerpoMalla2 = new THREE.Mesh(cuerpo2); var baseMalla2= new THREE.Mesh(base2);
+var reyForma2= new THREE.Geometry();
+
+reyForma2.merge(cruzMalla2.geometry, cruzMalla2.matrix);
+reyForma2.merge(cuerpoMalla2.geometry, cuerpoMalla2.matrix);
+reyForma2.merge(baseMalla2.geometry, baseMalla2.matrix);
+reyForma2.translate(-150,-23,0);
+
+var material2 = new THREE.MeshNormalMaterial();
+var reyMalla2 = new THREE.Mesh(reyForma2, material2);
+Escena.add(reyMalla2);
+}
+cargar_reina();
+
+function cargar_escenario(){
+var material = new THREE.MeshNormalMaterial();
+//Tablero multicolor 1
+var cubo1;
+for (var k1=0;k1<2;k1++)
+{for (var l1=0;l1<63;l1++)
+{cubo1= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+cubo1.position.x =-310+l1*10;   cubo1.position.z=-k1*10;   cubo1.position.y=-130;
+ Escena.add(cubo1); }}
+
+//Tablero multicolor 2
+var cubo2;
+for (var k2=0;k2<2;k2++)
+{for (var l2=0;l2<19;l2++)
+{cubo2= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+var cubo4= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);  
+  cubo2.position.x =-310+l2*10;   cubo2.position.z=-k2*10;    cubo2.position.y=-80;
+  cubo4.position.x =120+l2*10;  cubo4.position.z=-k2*10;  cubo4.position.y=-80;
+  Escena.add(cubo4);
+  Escena.add(cubo2);}}
+
+//Tablero multicolor  3
+for (var k3=0;k3<2;k3++)
+{for (var l3=0;l3<18;l3++)
+{var cubo3= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+  cubo3.position.x =-90+l3*10;  cubo3.position.z=-k3*10;   cubo3.position.y=-80;
+  Escena.add(cubo3);}}
+
+//Tablero multicolor 5
+for (var k5=0;k5<2;k5++)
+{for (var l5=0;l5<10;l5++)
+{var cubo5= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+ var cubo7= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material); 
+  cubo5.position.x =-310+l5*10;  cubo5.position.z=-k5*10;  cubo5.position.y=-30;
+  cubo7.position.x =210+l5*10;  cubo7.position.z=-k5*10;  cubo7.position.y=-30;
+  Escena.add(cubo7);
+  Escena.add(cubo5); }}
+
+//Tablero multicolor 6
+for (var k6=0;k6<2;k6++)
+{for (var l6=0;l6<36;l6++)
+{var cubo6= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+  cubo6.position.x =-180+l6*10;  cubo6.position.z=-k6*10;  cubo6.position.y=-30;
+  Escena.add(cubo6);}}
+
+
+
+//Tablero multicolor 8
+for (var k8=0;k8<2;k8++)
+{for (var l8=0;l8<25;l8++)
+{var cubo8= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+ var cubo9= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+  cubo8.position.x =-310+l8*10;  cubo8.position.z=-k8*10;  cubo8.position.y=20;
+  cubo9.position.x =60+l8*10;  cubo9.position.z=-k8*10;  cubo9.position.y=20;
+  Escena.add(cubo9);
+  Escena.add(cubo8);}}
+
+
+//Tablero multicolor 10
+for (var k10=0;k10<2;k10++)
+{for (var l10=0;l10<30;l10++)
+{var cubo10= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+  cubo10.position.x =-150+l10*10;  cubo10.position.z=-k10*10;  cubo10.position.y=70;
+  Escena.add(cubo10);}}
+
+//Tablero multicolor 11
+for (var k11=0;k11<2;k11++)
+{for (var l11=0;l11<26;l11++)
+{cubo11= new THREE.Mesh( new THREE.BoxGeometry(10,10,-10),material);
+  cubo11.position.x =-130+l11*10;  cubo11.position.z=-k11*10;  cubo11.position.y=80;
+  Escena.add(cubo11);}}
+}
+cargar_escenario();
+					
+		
+			inicio();
+			animacion();
+	</script>
+  </body>
+
+</html>
