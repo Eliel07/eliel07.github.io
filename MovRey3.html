@@ -61,7 +61,7 @@
 					distancia=100;
 					recorrido=distancia*tiempo;
 					
-					obj_mov=reyMalla2;
+					obj_mov=mallaCubo;
 					
 					if(teclado.pressed("up")){
 						obj_mov.position.Y+=recorrido;
@@ -86,7 +86,7 @@
 			}
       
 			/**************************llamado a las funciones ******************/
-		function cargar_reina(){
+	/*	function cargar_reina(){
 //Figura2
 //CRUZ2
 var reina = new THREE.Shape();
@@ -124,7 +124,17 @@ var material2 = new THREE.MeshNormalMaterial();
 var reyMalla2 = new THREE.Mesh(reyForma2, material2);
 Escena.add(reyMalla2);
 }
-cargar_reina();
+cargar_reina();*/
+		function cargar_cubo(){
+				geometriaCubo = new THREE.CubeGeometry( 10, 10, 10 );
+				var material = new THREE.MeshBasicMaterial();
+				mallaCubo = new THREE.Mesh( geometriaCubo,material);
+				Escenario.add(mallaCubo);
+				mallaCubo.position.set(0,-0,30);
+				
+			}
+			cargar_cubo();
+
 
 function cargar_escenario(){
 var material = new THREE.MeshNormalMaterial();
