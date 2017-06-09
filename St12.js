@@ -265,7 +265,7 @@ for (var l11=0;l11<26;l11++)
 {
 //Textura
 	var textureLoader = new THREE.TextureLoader();
-	crateTexture = textureLoader.load("cesped.jpg");
+	crateTexture = textureLoader.load("https://github.com/Eliel07/eliel07.github.io/blob/master/cesped.jpg");
 		
 	// Create mesh with these textures
 	cubo11 = new THREE.Mesh(
